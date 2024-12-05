@@ -1,0 +1,80 @@
+/* Conteneur principal */
+.container {
+  max-width: 1200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Carte principale */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Zoom sur la carte au survol */
+}
+
+.card-body {
+  padding: 30px;
+}
+
+/* Table des genres */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #1680d1;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Bouton d'édition */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-success:hover {
+  background-color: #3d40eb;
+  cursor: pointer;
+}
+
+/* Colonne pour le composant "update-genre" */
+.col-sm-4, .col-md-4, .col-lg-4 {
+  padding: 0 15px;
+}
+
+.col-sm-4 {
+  margin-bottom: 20px;
+}
+
+/* Ajout d'un peu d'espace entre les éléments de la carte */
+.card-body {
+  padding-top: 20px;
+}
+
+/* Espacement entre les éléments */
+.mb-4 {
+  margin-bottom: 30px !important;
+}

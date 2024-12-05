@@ -1,0 +1,120 @@
+
+/* Style général pour la page */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container principal */
+.container {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+/* Formulaire de sélection */
+.col-sm-4, .col-md-4, .col-lg-4 {
+  margin-bottom: 20px;
+}
+
+/* Label de sélection de genre */
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Sélecteur de genre */
+select.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #5b94cd;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+select.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Card avec ombre pour la table */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Table stylisée */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  color: #333;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-striped tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style des boutons dans la table */
+.btn {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+  .table th, .table td {
+      font-size: 12px;
+      padding: 8px;
+  }
+
+  .col-sm-4, .col-md-4, .col-lg-4 {
+      width: 100%;
+  }
+}

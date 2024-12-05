@@ -1,0 +1,26 @@
+
+
+<div class="container">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label>Genre </label>
+            <select class="form-control form-control-lg" id="idGenre" name="idGenre" [(ngModel)]="idGenres" (change)="onChange()">
+                <option *ngFor="let gen of genres" value="{{gen.idGenre}}">
+                    {{gen.nomGenre}}
+                </option>
+            </select>
+        </div>
+
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tbody *ngFor="let film of films">
+    <tr > <td>{{film.nomFilm}}</td>
+    <td>{{film.rateFilm}}</td>
+    <td>{{film.dateSortie | date:'dd/MM/yyyy'}}</td>
+    <td>{{film.genre.nomGenre}}</td>
+   </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>

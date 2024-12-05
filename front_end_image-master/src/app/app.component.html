@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion des films</title>
+ 
+  <style>
+    /* Custom Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    #sidebar-wrapper {
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #6f42c1; /* Violet */
+      z-index: 100;
+      transition: all 0.3s;
+      color: white;
+    }
+
+    #sidebar-wrapper .sidebar-heading {
+      padding: 15px;
+      font-size: 1.5rem;
+      text-align: center;
+      background-color: #5a2d8c; /* Darker shade of violet */
+    }
+
+    #sidebar-wrapper .list-group-item {
+      border: none;
+      border-radius: 0;
+      padding: 15px;
+      color: white;
+      font-size: 1rem;
+      background-color: #6f42c1; /* Violet */
+      transition: background-color 0.3s ease;
+    }
+
+    #sidebar-wrapper .list-group-item:hover {
+      background-color: #5a2d8c; /* Darker violet when hovered */
+      cursor: pointer;
+    }
+
+    #sidebar-wrapper .list-group-item.active {
+      background-color: #4e1b7e; /* Even darker violet for active item */
+    }
+
+    #page-content-wrapper {
+      margin-left: 250px;
+      transition: all 0.3s;
+      padding: 20px;
+    }
+
+    #page-content-wrapper h1 {
+      font-size: 2.5rem;
+    }
+
+    .dropdown-menu {
+      padding-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      #sidebar-wrapper {
+        width: 200px;
+      }
+      
+      #page-content-wrapper {
+        margin-left: 0;
+      }
+    }
+
+    .dropdown-toggle::after {
+      content: "\f0d7";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <div class="sidebar-heading text-white">Gestion films</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item" routerLink="/films">Home</a>
+        
+        <!-- Films Dropdown -->
+        <a href="#" class="list-group-item dropdown-toggle" >
+          Films
+        </a>
+       <ul>
+          <li><a *ngIf="authService.isAdmin()" class="list-group-item" routerLink="/add-film">Ajouter</a></li>
+          <li>  <a href="#" class="list-group-item" routerLink="/films">Lister</a></li>
+          <li><a class="list-group-item" routerLink="/rechercheParGenre">Recherche Par genre</a></li>
+            <li><a class="list-group-item" routerLink="/rechercheParNom">Recherche Par Nom</a></li>
+              <li> <a class="list-group-item" routerLink="/listeGenres">Gestion des genres</a></li>
+            </ul>
+
+        <!-- User Section -->
+        <div class="list-group-item">
+          <span>{{ authService.loggedUser }}</span>
+        </div>
+        <a *ngIf="!authService.isloggedIn" href="#" class="list-group-item" routerLink="/login">Login</a>
+        <a *ngIf="authService.isloggedIn" href="#" class="list-group-item" (click)="onLogout()">Logout</a>
+        <a href="#" class="list-group-item">Profile</a>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper" class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
